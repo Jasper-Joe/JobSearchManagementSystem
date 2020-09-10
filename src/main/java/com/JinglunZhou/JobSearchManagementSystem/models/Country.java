@@ -1,9 +1,15 @@
 package com.JinglunZhou.JobSearchManagementSystem.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +28,14 @@ public class Country {
 	private String capital;
 	private String nationality;
 	private String description;
+	
+	@OneToMany(mappedBy="country")
+	private List<State> states;
+	
+	@OneToMany(mappedBy="country")
+	private List<Job> jobs;
+	
+
 	public Integer getId() {
 		return id;
 	}
