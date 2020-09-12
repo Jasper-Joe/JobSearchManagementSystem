@@ -418,6 +418,7 @@
                 </thead>
                 <tbody>
                   <tr th:each="appliedJob:${appliedJobs}">
+                  	<td th:text="${appliedJob.getId()}"></td>
                     <td th:text="${appliedJob.getCompanyName()}"></td>
                     <td th:text="${appliedJob.getIndustry()}"></td>
                     <td th:text="${appliedJob.getJobTitle()}"></td>
@@ -456,20 +457,47 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form th:action="@{/applied/addNew}" method="post">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">Industry:</label>
+            <input type="text" class="form-control" id="recipient-name" name="industry">
           </div>
+          
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="recipient-name" class="col-form-label">Company Name:</label>
+            <input type="text" class="form-control" id="recipient-name" name="companyName">
           </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Employee Type:</label>
+            <input type="text" class="form-control" id="recipient-name" name="employeeType">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Job Title:</label>
+            <input type="text" class="form-control" id="recipient-name" name="jobTitle">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Location:</label>
+            <input type="text" class="form-control" id="recipient-name" name="location">
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Applied Date:</label>
+            <input type="text" class="form-control" id="recipient-name" name="appliedDate">
+          </div>
+          
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        
       </div>
     </div>
   </div>
