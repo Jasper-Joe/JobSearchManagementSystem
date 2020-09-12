@@ -12,7 +12,7 @@
 	<artifactId>fleetapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>fleetapp</name>
-	<description>Full Application for Fleet Management</description>
+	<description>Full Application for Job Search Management</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,10 +21,11 @@
 	<dependencies>
 	
 
+<!-- 	<dependency>
+	    <groupId>org.thymeleaf.extras</groupId>
+	     <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+	</dependency> -->
 
-		
-
-	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -59,6 +60,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+
+	
+	
 	</dependencies>
 
 	<build>
