@@ -47,5 +47,11 @@ public class AppliedController {
 		appliedService.save(applied);
 		return "redirect:/applied";
 	}
+	
+	@RequestMapping(value="/applied/delete",method= {RequestMethod.DELETE, RequestMethod.GET})
+	public String delete(int id) {
+		appliedService.delete(id);
+		return "redirect:/applied";
+	}
 
 }

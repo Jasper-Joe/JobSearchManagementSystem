@@ -30,5 +30,10 @@ public class AppliedService {
 	public Optional<Applied> findById(int id) {
 		return appliedRepository.findById(id);
 	}
+	
+	public void delete(int id) {
+		appliedRepository.deleteById(id);
+		
+	}
 
 }
