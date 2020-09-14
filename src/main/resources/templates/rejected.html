@@ -419,19 +419,19 @@
                   </tr>
                 
       
-                  <tr th:each="appliedJob:${appliedJobs}">
-                  	<td th:text="${appliedJob.getId()}"></td>
-                    <td th:text="${appliedJob.getCompanyName()}"></td>
-                    <td th:text="${appliedJob.getIndustry()}"></td>
-                    <td th:text="${appliedJob.getJobTitle()}"></td>
-                    <td th:text="${appliedJob.getLocation()}"></td>
-                    <td th:text="${appliedJob.getAppliedDate()}"></td>
-                    <td th:text="${appliedJob.getEmployeeType()}"></td>
+                  <tr th:each="rejectedJob:${rejectedJobs}">
+                  	<td th:text="${rejectedJob.getId()}"></td>
+                    <td th:text="${rejectedJob.getCompanyName()}"></td>
+                    <td th:text="${rejectedJob.getIndustry()}"></td>
+                    <td th:text="${rejectedJob.getJobTitle()}"></td>
+                    <td th:text="${rejectedJob.getLocation()}"></td>
+                    <td th:text="${rejectedJob.getAppliedDate()}"></td>
+                    <td th:text="${rejectedJob.getEmployeeType()}"></td>
                     <td>
                     <div class="btn-group">
-                    <a class="btn btn-primary" th:href="@{/applied/findById/(id=${appliedJob.getId()})}" id="editButton"><i class="icon_pencil-edit"></i></a>
+                    <a class="btn btn-primary" th:href="@{/rejected/findById/(id=${rejectedJob.getId()})}" id="editButton"><i class="icon_pencil-edit"></i></a>
                     <a class="btn btn-sucess" id="detailsButton"><i class="icon_document_alt"></i></a>
-                    <a class="btn btn-danger" th:href="@{/applied/delete/(id=${appliedJob.getId()})}" id="deleteButton"><i class="icon_close_alt2"></i></a>
+                    <a class="btn btn-danger" th:href="@{/rejected/delete/(id=${rejectedJob.getId()})}" id="deleteButton"><i class="icon_close_alt2"></i></a>
                     </div>
                     </td>
                   </tr>
@@ -463,7 +463,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form th:action="@{/applied/addNew}" method="post">
+        <form th:action="@{/rejected/addNew}" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Industry:</label>
             <input type="text" class="form-control" id="recipient-name" name="industry">
@@ -513,7 +513,7 @@
 
 
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-  <form th:action="@{/applied/update}" method="put">
+  <form th:action="@{/rejected/update}" method="put">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -602,7 +602,7 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
-  <script src="js/applied.js"></script>
+  <script src="js/rejected.js"></script>
 
 
 </body>

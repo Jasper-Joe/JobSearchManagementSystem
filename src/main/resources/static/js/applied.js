@@ -18,13 +18,13 @@
 	$('.table #detailsButton').on('click',function(event) {
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(country, status){
-			$('#idDetails').val(country.id);
-			$('#descriptionDetails').val(country.description);
-			$('#capitalDetails').val(country.capital);
-			$('#codeDetails').val(country.code);
-			$('#lastModifiedByDetails').val(country.lastModifiedBy);
-			$('#lastModifiedDateDetails').val(country.lastModifiedDate.substr(0,19).replace("T", " "));
+		$.get(href, function(applied, status){
+			$('#idDetails').val(applied.id);
+			$('#descriptionDetails').val(applied.description);
+			$('#capitalDetails').val(applied.capital);
+			$('#codeDetails').val(applied.code);
+			$('#lastModifiedByDetails').val(applied.lastModifiedBy);
+			$('#lastModifiedDateDetails').val(applied.lastModifiedDate.substr(0,19).replace("T", " "));
 		});			
 		$('#detailsModal').modal();		
 	});	

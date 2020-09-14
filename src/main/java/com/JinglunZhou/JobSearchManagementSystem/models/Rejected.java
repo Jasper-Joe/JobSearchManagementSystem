@@ -28,8 +28,30 @@ public class Rejected {
 	private Integer companyid;
 	
 	private String employeeType;
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getAppliedDate() {
+		return appliedDate;
+	}
+	public void setAppliedDate(String appliedDate) {
+		this.appliedDate = appliedDate;
+	}
 	private String industry;
 	private String jobTitle;
+	private String location;
+	private String companyName;
+	private String appliedDate;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="countryid", insertable=false, updatable=false)
@@ -115,5 +137,6 @@ public class Rejected {
 	}
 	private String city;
 	private Integer applicants;
+
 
 }
