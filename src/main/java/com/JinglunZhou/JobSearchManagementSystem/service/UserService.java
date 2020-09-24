@@ -3,8 +3,15 @@ package com.JinglunZhou.JobSearchManagementSystem.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.JinglunZhou.JobSearchManagementSystem.models.User;
+import com.JinglunZhou.JobSearchManagementSystem.repositories.UserRepository;
+
 @Service
 public class UserService {
-	//@Autowired  private UserService userService;
+	@Autowired  private UserRepository userRepository;
+	public void save(User user) {
+		userRepository.save(user);
+	}
+	
 
 }
